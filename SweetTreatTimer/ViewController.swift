@@ -14,6 +14,13 @@ class ViewController: UIViewController {
         // テスト
     }
 
-
+    @IBOutlet weak var countDownLabel: UILabel!
+    
+    @IBAction func settingButtonAction(_ sender: Any) {
+    }
+    @IBAction func startButtonAction(_ sender: Any) {
+    }
+    @IBAction func stopButtonAction(_ sender: Any) {
+    }
 }
 
