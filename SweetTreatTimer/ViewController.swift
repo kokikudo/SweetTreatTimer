@@ -7,22 +7,27 @@
 
 import UIKit
 
-class ViewController: UIViewController {
+class ViewController: UIViewController, UITextFieldDelegate {
 
     var timer: Timer?
     var count = 0
     let settingKey = "timer_value"
+
+    @IBOutlet weak var countDownLabel: UILabel!
+    @IBOutlet weak var inputTreatText: UITextField!
     
+    // ロード時
     override func viewDidLoad() {
         super.viewDidLoad()
-        // テスト
-        
+        // 10秒でセット。
         let settings = UserDefaults.standard
         settings.register(defaults: [settingKey: 10])
         
+        //
+        inputTreatText.setUnderLine()
+        
+        inputTreatText.delegate = self
     }
-
-    @IBOutlet weak var countDownLabel: UILabel!
     
     // 秒数設定ボタンの処理
     @IBAction func settingButtonAction(_ sender: Any) {
@@ -48,16 +53,11 @@ class ViewController: UIViewController {
         
         // タイマースタート
         // Timer.scheduledTimer(): ある処理を一定間隔で実行する関数
-        // timeInterval: 実行する間隔
-        // target: タイマーの呼び出し先。同じクラス内にあるのでself
-        // selector: 呼び出したいメソッド。セレクタで指定。
-        // userInfo: メソッドに渡したい情報。今回は無し。
-        // repeats: 繰り返すかどうか。falseにすると一回のみ。
-        timer = Timer.scheduledTimer(timeInterval: 1.0,
-                                     target: self,
-                                     selector: #selector(self.timerInerrupt(_:)),
-                                     userInfo: nil,
-                                     repeats: true)
+        timer = Timer.scheduledTimer(timeInterval: 1.0, // 実行する間隔
+                                     target: self, // タイマーの呼び出し先。同じクラス内にあるのでself
+                                     selector: #selector(self.timerInerrupt(_:)), // 呼び出したいメソッド。セレクタで指定。
+                                     userInfo: nil, // メソッドに渡したい情報。今回は無し。
+                                     repeats: true) // 繰り返すかどうか。falseにすると一回のみ。
     }
     
     // ストップボタンの処理
@@ -88,6 +88,12 @@ class ViewController: UIViewController {
         if displayUpdate() <= 0 {
             count = 0
             timer.invalidate()
+            
+            // タイマー終了のアラート
+            let alertController = UIAlertController(title: "終了", message: "よく我慢できたね！", preferredStyle: .alert)
+            let defaultAction = UIAlertAction(title: "よし食うぞ", style: .default, handler: nil)
+            alertController.addAction(defaultAction)
+            present(alertController, animated: true, completion: nil)
         }
     }
     
@@ -98,5 +104,28 @@ class ViewController: UIViewController {
         // タイマーの表示を更新する
         _ = displayUpdate()
     }
+    
+    // リターンをタップでキーボードを閉じる
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        textField.resignFirstResponder()
+        return true
+    }
 }
 
+// テキストフィールドの枠線を消し、アンダーラインをつける
+extension UITextField {
+    func setUnderLine() {
+        borderStyle = .none // 枠線非表示
+        
+        // 枠線を作成(UIView)。
+        let underline = UIView()
+        underline.frame = CGRect(x: 0, y: frame.height, width: frame.width, height: 0.75)
+        underline.backgroundColor = .blue
+        
+        // 追加
+        addSubview(underline)
+        
+        // 枠線を最前面に設置
+        bringSubviewToFront(underline)
+    }
+}

@@ -39,17 +39,34 @@
                                     <action selector="stopButtonAction:" destination="BYZ-38-t0r" eventType="touchUpInside" id="RSV-sc-ua3"/>
                                 </connections>
                             </button>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="お菓子の名前を入力してください" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="VMN-UC-4kl">
+                                <rect key="frame" x="8" y="205" width="374" height="36"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="22"/>
+                                <textInputTraits key="textInputTraits" returnKeyType="done" enablesReturnKeyAutomatically="YES" textContentType="name"/>
+                            </textField>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="食べたいお菓子" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WaS-85-6jz">
+                                <rect key="frame" x="8" y="169" width="128" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
+                            <constraint firstItem="VMN-UC-4kl" firstAttribute="top" secondItem="WaS-85-6jz" secondAttribute="bottom" constant="15" id="0QN-iN-wXi"/>
                             <constraint firstItem="itf-aY-MKo" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="4QM-cO-7JD"/>
                             <constraint firstItem="lfW-G2-e6I" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" constant="100" id="86z-4e-ZMn"/>
+                            <constraint firstItem="VMN-UC-4kl" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="8" id="8hz-so-VOv"/>
                             <constraint firstAttribute="bottom" secondItem="vDu-hn-zMJ" secondAttribute="bottom" id="Es9-Ah-c26"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" relation="lessThanOrEqual" secondItem="WaS-85-6jz" secondAttribute="trailing" constant="254" id="HHK-gM-MKH"/>
                             <constraint firstItem="QrJ-h6-pEb" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" constant="100" id="HZQ-Yc-5w3"/>
                             <constraint firstItem="lfW-G2-e6I" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" constant="80" id="OKf-CN-yJe"/>
                             <constraint firstItem="vDu-hn-zMJ" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="Ta2-Fo-Ouk"/>
                             <constraint firstItem="vDu-hn-zMJ" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="VNG-Cq-VZV"/>
+                            <constraint firstItem="itf-aY-MKo" firstAttribute="top" secondItem="VMN-UC-4kl" secondAttribute="bottom" constant="63" id="Zh8-WU-ZX1"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="VMN-UC-4kl" secondAttribute="trailing" constant="8" id="fza-rJ-NuI"/>
+                            <constraint firstItem="WaS-85-6jz" firstAttribute="leading" secondItem="VMN-UC-4kl" secondAttribute="leading" id="iVC-Tp-k5T"/>
                             <constraint firstItem="itf-aY-MKo" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" constant="-100" id="lnd-fj-6cI"/>
                             <constraint firstItem="QrJ-h6-pEb" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" constant="-80" id="mfe-DG-IvC"/>
                             <constraint firstItem="vDu-hn-zMJ" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="ndv-Eu-zyJ"/>
@@ -64,6 +81,7 @@
                     </navigationItem>
                     <connections>
                         <outlet property="countDownLabel" destination="itf-aY-MKo" id="O34-if-9K0"/>
+                        <outlet property="inputTreatText" destination="VMN-UC-4kl" id="IGr-DV-h6o"/>
                         <segue destination="dmZ-8B-WZR" kind="show" identifier="goSetting" id="qiJ-aQ-QuS"/>
                     </connections>
                 </viewController>
