@@ -15,7 +15,10 @@ class TimerSettingViewController: UIViewController {
         // Do any additional setup after loading the view.
     }
     
-
+    @IBOutlet weak var timerSettingPicker: UIPickerView!
+    
+    @IBAction func decisionButtonAction(_ sender: Any) {
+    }
     /*
     // MARK: - Navigation
 
