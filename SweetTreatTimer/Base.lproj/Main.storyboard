@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Sqr-ze-nKv">
-    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <device id="retina6_0" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
@@ -13,16 +13,49 @@
             <objects>
                 <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="SweetTreatTimer" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <rect key="frame" x="0.0" y="0.0" width="390" height="844"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="bg" translatesAutoresizingMaskIntoConstraints="NO" id="vDu-hn-zMJ">
+                                <rect key="frame" x="0.0" y="88" width="390" height="756"/>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="itf-aY-MKo">
+                                <rect key="frame" x="159.66666666666666" y="304" width="71" height="36"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="30"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="QrJ-h6-pEb">
+                                <rect key="frame" x="45" y="452" width="140" height="140"/>
+                                <state key="normal" image="btn_start"/>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lfW-G2-e6I">
+                                <rect key="frame" x="205" y="452" width="140" height="140"/>
+                                <state key="normal" image="btn_stop"/>
+                            </button>
+                        </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="itf-aY-MKo" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="4QM-cO-7JD"/>
+                            <constraint firstItem="lfW-G2-e6I" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" constant="100" id="86z-4e-ZMn"/>
+                            <constraint firstAttribute="bottom" secondItem="vDu-hn-zMJ" secondAttribute="bottom" id="Es9-Ah-c26"/>
+                            <constraint firstItem="QrJ-h6-pEb" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" constant="100" id="HZQ-Yc-5w3"/>
+                            <constraint firstItem="lfW-G2-e6I" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" constant="80" id="OKf-CN-yJe"/>
+                            <constraint firstItem="vDu-hn-zMJ" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="Ta2-Fo-Ouk"/>
+                            <constraint firstItem="vDu-hn-zMJ" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="VNG-Cq-VZV"/>
+                            <constraint firstItem="itf-aY-MKo" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" constant="-100" id="lnd-fj-6cI"/>
+                            <constraint firstItem="QrJ-h6-pEb" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" constant="-80" id="mfe-DG-IvC"/>
+                            <constraint firstItem="vDu-hn-zMJ" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="ndv-Eu-zyJ"/>
+                        </constraints>
                     </view>
-                    <navigationItem key="navigationItem" id="gTC-Zw-DKG"/>
+                    <navigationItem key="navigationItem" id="gTC-Zw-DKG">
+                        <barButtonItem key="rightBarButtonItem" title="秒数設定" id="98c-Yi-oA2"/>
+                    </navigationItem>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="763.768115942029" y="70.982142857142847"/>
+            <point key="canvasLocation" x="763.07692307692309" y="70.379146919431278"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="fh6-xY-JyS">
@@ -30,7 +63,7 @@
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="Sqr-ze-nKv" sceneMemberID="viewController">
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="plt-1L-gfE">
-                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                        <rect key="frame" x="0.0" y="44" width="390" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
@@ -44,6 +77,9 @@
         </scene>
     </scenes>
     <resources>
+        <image name="bg" width="750" height="1334"/>
+        <image name="btn_start" width="140" height="140"/>
+        <image name="btn_stop" width="140" height="140"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
